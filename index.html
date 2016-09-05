@@ -33,24 +33,22 @@
     // $('#iframe').attr('src', 'http://localhost:8080/index1.html');
     $('#iframe').attr('src', 'http://localhost:8090');
 
-    $("#image").click(function(){
-       alert("image clicked");
+    $('#image').click(function(){
+       alert('image clicked');
        // $("#iframe").click();
-       // window.frames[0].postMessage("The user is 'bob' and the password is 'secret'",
-       //            "http://localhost:8090");
+       window.frames[0].postMessage("The user is 'bob' and the password is 'secret'", "http://localhost:8090");
        $('#modal').modal();
     });
 
     $('#modal').on('shown.bs.modal', function() {
-      // window.frames[0].postMessage("The user is 'bob' and the password is 'secret'",
-      //            "http://localhost:8090");
+      window.frames[0].postMessage("The user is 'bob' and the password is 'secret'", "http://localhost:8090");
     });
 
 
-    $("#iframe").click(function(){
+    $('#iframe').click(function(){
 
-       alert("iframe clicked");
-       // $("#iframe").contents().find("#image1").click();
+       alert('iframe clicked');
+       // $('#iframe').contents().find('#image1').click();
     });
   });
 
