@@ -11,6 +11,18 @@
     $('#image1').click(function() {
       alert('#image1');
     });
+    
+    window.addEventListener("message", receiveMessage, false);
+    function receiveMessage(event)
+    {
+      var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+      if (origin !== "http://example.org:8080")
+        return;
+      
+      console.log(11);
+      $('#image1').trigger('click');
+      // ...
+    }
   });
   </script>
 </body>
